@@ -4,6 +4,8 @@ import { PermissionsModel } from './permissionsModel';
 import {PageActions, Grid} from "../../../common/directive";
 import {PageAction} from "../../../common/models/ui";
 import permissionService from "../_share/services/permissionService";
+import {Router} from "angular2/router";
+import {AddPermissionConstant} from "../_share/common/constant";
 
 @Component({
     templateUrl: "app/modules/security/permission/permissions.html",
@@ -12,9 +14,11 @@ import permissionService from "../_share/services/permissionService";
 
 export class Permissions extends BasePage {
     public model: PermissionsModel = new PermissionsModel();
-    constructor() {
+    public router: Router;
+    constructor(router: Router) {
         super();
         let self: Permissions = this;
+        self.router = router;
         self.model.addAction(new PageAction("btnAddPermission", "security.permissions.addPermissionAction",
             () => self.onAddPermissionClicked())
         )
@@ -36,6 +40,6 @@ export class Permissions extends BasePage {
     }
 
     private onAddPermissionClicked() {
-        console.log("Add Permisisons");
+        this.router.navigate([AddPermissionConstant.Name]);
     }
 }
