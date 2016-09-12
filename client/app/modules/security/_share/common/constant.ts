@@ -1,9 +1,9 @@
-export const PermissionsConstant = {
-    Router: "/permissions",
+export const permissionsConstant = {
+    Route: "/permissions",
     Name : "Permissions"
 }
 
-export const AddPermissionConstant = {
-    Router: "/addPermission",
+export const addPermissionConstant = {
+    Route: "/addPermission",
     Name: "AddPermission"
 }

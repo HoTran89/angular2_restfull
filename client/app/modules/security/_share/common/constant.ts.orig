@@ -1,0 +1,19 @@
+<<<<<<< HEAD
+export const PermissionsConstant = {
+    Router: "/permissions",
+    Name : "Permissions"
+}
+
+export const AddPermissionConstant = {
+    Router: "/addPermission",
+=======
+export const permissionsConstant = {
+    Route: "/permissions",
+    Name : "Permissions"
+}
+
+export const addPermissionConstant = {
+    Route: "/addPermission",
+>>>>>>> feature/addPermission
+    Name: "AddPermission"
+}
