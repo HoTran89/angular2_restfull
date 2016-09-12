@@ -2,7 +2,8 @@ import configHelper from "../../../../common/helpers/configHelper";
 
 let permissionService = {
     getPermissions: getPermissions,
-    deletePermission: deletePermission
+    deletePermission: deletePermission,
+    addPermission: addPermission
 };
 export default permissionService;
 
@@ -16,4 +17,10 @@ function deletePermission(id: string) {
     let url = String.format("{0}permissions/{1}", configHelper.getAppConfig().api.baseUrl, id);
     let connector = window.ioc.resolve("IConnector");
     return connector.delete(url);
+}
+
+function addPermission(permission: any) {
+    let url = String.format("{0}permissions", configHelper.getAppConfig().api.baseUrl);
+    let connector = window.ioc.resolve("IConnector");
+    return connector.post(url, permission);
 }
