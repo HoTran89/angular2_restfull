@@ -1,8 +1,8 @@
 import {IModule, Module, MenuItem} from "../../../../common/models/layout";
 import {Permissions} from "../../permission/permissions";
 import {AuthenticationMode} from "../../../../common/enum";
-import {PermissionsConstant} from "../../_share/common/constant";
-import {AddPermissionConstant} from "../../_share/common/constant";
+import {permissionsConstant} from "../../_share/common/constant";
+import {addPermissionConstant} from "../../_share/common/constant";
 import {AddPermission} from "../../permission/addPermission";
 
 let umModule: IModule = createModule();
@@ -16,8 +16,8 @@ function createModule() {
         )
     );
     module.addRoutes([
-        { path: PermissionsConstant.Router, name: PermissionsConstant.Name, component: Permissions, data: { authentication: AuthenticationMode.Require }, useAsDefault: true },
-        { path: AddPermissionConstant.Router, name: AddPermissionConstant.Name, component: AddPermission, data: { authentication: AuthenticationMode.Require } }
+        { path: permissionsConstant.Route, name: permissionsConstant.Name, component: Permissions, data: { authentication: AuthenticationMode.Require }, useAsDefault: true },
+        { path: addPermissionConstant.Route, name: addPermissionConstant.Name, component: AddPermission, data: { authentication: AuthenticationMode.Require } }
     ]);
     return module;
 }

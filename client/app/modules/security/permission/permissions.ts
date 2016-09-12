@@ -5,7 +5,7 @@ import {PageActions, Grid} from "../../../common/directive";
 import {PageAction} from "../../../common/models/ui";
 import permissionService from "../_share/services/permissionService";
 import {Router} from "angular2/router";
-import {AddPermissionConstant} from "../_share/common/constant";
+import {addPermissionConstant} from "../_share/common/constant";
 
 @Component({
     templateUrl: "app/modules/security/permission/permissions.html",
@@ -40,6 +40,6 @@ export class Permissions extends BasePage {
     }
 
     private onAddPermissionClicked() {
-        this.router.navigate([AddPermissionConstant.Name]);
+        this.router.navigate([addPermissionConstant.Name]);
     }
 }

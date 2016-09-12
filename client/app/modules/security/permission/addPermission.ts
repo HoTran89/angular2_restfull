@@ -1,7 +1,7 @@
 import {Component} from "angular2/core";
 import {BasePage} from "../../../common/models/ui";
 import {Router} from "angular2/router";
-import {PermissionsConstant} from "../_share/common/constant";
+import {permissionsConstant} from "../_share/common/constant";
 import permissionService from "../_share/services/permissionService";
 import {AddPermissionModel} from "./addPermissionModel";
 import {ValidationDirective} from "../../../common/directive";
@@ -22,7 +22,7 @@ export class AddPermission extends BasePage {
     }
 
     public onCancelClicked() {
-        this.router.navigate([PermissionsConstant.Name]);
+        this.router.navigate([permissionsConstant.Name]);
     }
 
     public onSaveClicked() {
@@ -31,7 +31,7 @@ export class AddPermission extends BasePage {
             return;
         }
         permissionService.addPermission(self.model).then(function () {
-            self.router.navigate([PermissionsConstant.Name]);
+            self.router.navigate([permissionsConstant.Name]);
         })
     }
 }
